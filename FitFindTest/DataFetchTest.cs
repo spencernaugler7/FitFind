@@ -20,5 +20,12 @@ public class DataFetchTest
     {
         Assert.True(_exercises.Count is not 0);
     }
-    
+
+    [Test]
+    public void FirstExerciseInListIsSitup()
+    {
+        var situp = _exercises.First();
+        Assert.That(situp.Name, Is.EqualTo("3/4 Sit-Up"));
+        Assert.That(situp.PrimaryMuscles.First(), Is.EqualTo(ExerciseMuscle.Abdominals));
+    }
 }
