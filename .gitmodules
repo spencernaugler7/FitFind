@@ -1,0 +1,3 @@
+[submodule "exercises.json"]
+	path = exercises.json
+	url = git@github.com:wrkout/exercises.json.git
