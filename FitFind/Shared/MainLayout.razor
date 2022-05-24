@@ -1,4 +1,5 @@
 ﻿@inherits LayoutComponentBase
+@inject NavigationManager _NavigationManager
 
 <PageTitle>FitFind</PageTitle>
 
@@ -6,7 +7,7 @@
     <main>
         <div class="top-row px-4">
             <div class="btn-group" role="group">
-                <button type="button" class="btn-primary">Discovery</button>
+                <button type="button" class="btn-primary" @onclick="NavigateToDiscovery">Discovery</button>
                 <button type="button" class="btn-primary">Profile</button>
             </div>
         </div>
@@ -16,3 +17,11 @@
         </article>
     </main>
 </div>
+
+@code {
+
+    public void NavigateToDiscovery()
+    {
+        _NavigationManager.NavigateTo("/Discovery");
+    }
+}
