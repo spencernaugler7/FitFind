@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using FitFind.Data;
-using FitFind.Models;
+﻿using FitFind.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Npgsql;
 
 namespace FitFind.Data;
-public partial class ExercisesdbContext : DbContext
+public partial class ExercisesDbContext : DbContext 
 {
-    public ExercisesdbContext()
+    public ExercisesDbContext()
     {
         MapEnums();
     }
 
-    public ExercisesdbContext(DbContextOptions<ExercisesdbContext> options)
+    public ExercisesDbContext(DbContextOptions<ExercisesDbContext> options)
         : base(options)
     {
         MapEnums();

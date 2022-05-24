@@ -32,7 +32,7 @@ public class UserTests
     [SetUp]
     public void Setup()
     {
-        using var context = new ExercisesdbContext();
+        using var context = new ExercisesDbContext();
         _exercises = context.Exercises.ToList();
         _user = new User();
     }
