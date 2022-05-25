@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using FitFind.Data;
 using Microsoft.EntityFrameworkCore;
+using MudBlazor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<ExercisesDbContext>();
+builder.Services.AddMudServices();
 builder.Services.AddDbContextFactory<ExercisesDbContext>(opt =>
     opt.UseNpgsql("Host=localhost:5432;Database=exercisesdb;Username=postgres;Password=password;"));
 

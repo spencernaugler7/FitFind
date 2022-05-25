@@ -1,6 +1,11 @@
 ﻿@inherits LayoutComponentBase
 @inject NavigationManager _NavigationManager
 
+
+<MudThemeProvider/>
+<MudDialogProvider/>
+<MudSnackbarProvider/>
+
 <PageTitle>FitFind</PageTitle>
 
 <div class="page">
@@ -11,10 +16,11 @@
                 <button type="button" class="btn-primary">Profile</button>
             </div>
         </div>
-
-        <article class="content px-4">
-            @Body
-        </article>
+        <MudMainContent>
+            <MudContainer MaxWidth="MaxWidth.Medium">
+                @Body
+            </MudContainer>
+        </MudMainContent>
     </main>
 </div>
 
@@ -22,6 +28,6 @@
 
     public void NavigateToDiscovery()
     {
-        _NavigationManager.NavigateTo("/Discovery");
+        _NavigationManager.NavigateTo("/discovery");
     }
 }
